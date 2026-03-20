@@ -1,0 +1,209 @@
+﻿<UserControl
+    x:Class="StabilityPlatForm.HMProject.UI.Views.DeviceStatusView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="850"
+    d:DesignWidth="1400"
+    mc:Ignorable="d">
+
+    <Grid Margin="0,10,0,0">
+        <Border Background="White" CornerRadius="12">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Opacity="0.03" ShadowDepth="4" Color="#000000" />
+            </Border.Effect>
+        </Border>
+
+        <ScrollViewer Padding="25" VerticalScrollBarVisibility="Auto">
+            <WrapPanel ItemWidth="380" Margin="5" Orientation="Horizontal">
+
+                <Border Margin="12" Padding="25" Background="White" BorderBrush="#F1F5F9" BorderThickness="1" CornerRadius="12">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.04" ShadowDepth="2" Color="#000000" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="0,0,0,15" Orientation="Horizontal">
+                            <Border Width="36" Height="36" Margin="0,0,12,0" Background="#FFF8E1" CornerRadius="8">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="#FFB300" Text="&#xEA80;" />
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#1E293B" Text="光源模块" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1" Height="1" Margin="0,0,0,15" Fill="#F1F5F9" />
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="连接状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="{Binding LightStatusColor}" Text="{Binding LightStatusText}" />
+                            </Grid>
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="工作状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" Foreground="#334155" Text="{Binding LightIsWorkingText}" />
+                            </Grid>
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="光照时间 (h)" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" FontWeight="SemiBold" Foreground="#0F172A" Text="{Binding LightTime}" />
+                            </Grid>
+                            <Grid Margin="0,0,0,5">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="黑暗时间 (h)" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="15" FontWeight="SemiBold" Foreground="#0F172A" Text="{Binding DarkTime}" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Margin="12" Padding="25" Background="White" BorderBrush="#F1F5F9" BorderThickness="1" CornerRadius="12">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.04" ShadowDepth="2" Color="#000000" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="0,0,0,15" Orientation="Horizontal">
+                            <Border Width="36" Height="36" Margin="0,0,12,0" Background="#F0F7FF" CornerRadius="8">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="#0066FF" Text="&#xE8AB;" />
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#1E293B" Text="通道切换器" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1" Height="1" Margin="0,0,0,15" Fill="#F1F5F9" />
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Margin="0,0,0,15">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="连接状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="{Binding ChannelStatusColor}" Text="{Binding ChannelStatusText}" />
+                            </Grid>
+                            <Grid Margin="0,15,0,0">
+                                <TextBlock VerticalAlignment="Bottom" Margin="0,0,0,4" FontSize="14" Foreground="#64748B" Text="当前通道" />
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Bottom" Margin="0,0,4,5" FontSize="16" FontWeight="Bold" Foreground="#0066FF" Text="CH" />
+                                    <TextBlock FontSize="32" FontWeight="Bold" Foreground="#0066FF" Text="{Binding CurrentChannel}" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Margin="12" Padding="25" Background="White" BorderBrush="#F1F5F9" BorderThickness="1" CornerRadius="12">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.04" ShadowDepth="2" Color="#000000" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="0,0,0,15" Orientation="Horizontal">
+                            <Border Width="36" Height="36" Margin="0,0,12,0" Background="#FFF3E0" CornerRadius="8">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="#ED7D31" Text="&#xE945;" />
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#1E293B" Text="偏压源表" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1" Height="1" Margin="0,0,0,15" Fill="#F1F5F9" />
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="连接状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="{Binding BiasStatusColor}" Text="{Binding BiasStatusText}" />
+                            </Grid>
+                            <Grid Margin="0,0,0,15">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="工作状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold" Foreground="#334155" Text="{Binding BiasIsWorkingText}" />
+                            </Grid>
+                            <Grid Margin="0,5,0,0">
+                                <TextBlock VerticalAlignment="Bottom" Margin="0,0,0,4" FontSize="14" Foreground="#64748B" Text="输出偏压" />
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <TextBlock FontSize="28" FontWeight="Bold" Foreground="#ED7D31" Text="{Binding CurrentBiasVoltage, StringFormat={}{0:F2}}" />
+                                    <TextBlock VerticalAlignment="Bottom" Margin="4,0,0,4" FontSize="15" FontWeight="Bold" Foreground="#A0A0A0" Text="V" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Margin="12" Padding="25" Background="White" BorderBrush="#F1F5F9" BorderThickness="1" CornerRadius="12">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.04" ShadowDepth="2" Color="#000000" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="0,0,0,15" Orientation="Horizontal">
+                            <Border Width="36" Height="36" Margin="0,0,12,0" Background="#FFEBEE" CornerRadius="8">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="#F44336" Text="&#xE7A9;" />
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#1E293B" Text="半导体温控模块" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1" Height="1" Margin="0,0,0,15" Fill="#F1F5F9" />
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Margin="0,0,0,15">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="连接状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="{Binding SemiStatusColor}" Text="{Binding SemiStatusText}" />
+                            </Grid>
+                            <Grid Margin="0,15,0,0">
+                                <TextBlock VerticalAlignment="Bottom" Margin="0,0,0,4" FontSize="14" Foreground="#64748B" Text="当前温度" />
+                                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                    <TextBlock FontSize="32" FontWeight="Bold" Foreground="#F44336" Text="{Binding CurrentTemperature, StringFormat={}{0:F1}}" />
+                                    <TextBlock VerticalAlignment="Bottom" Margin="4,0,0,5" FontSize="16" FontWeight="Bold" Foreground="#A0A0A0" Text="℃" />
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Border Margin="12" Padding="25" Background="White" BorderBrush="#F1F5F9" BorderThickness="1" CornerRadius="12">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="10" Opacity="0.04" ShadowDepth="2" Color="#000000" />
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Margin="0,0,0,15" Orientation="Horizontal">
+                            <Border Width="36" Height="36" Margin="0,0,12,0" Background="#F3E5F5" CornerRadius="8">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Segoe MDL2 Assets" FontSize="18" Foreground="#9C27B0" Text="&#xE9D9;" />
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#1E293B" Text="测试用源表" />
+                        </StackPanel>
+
+                        <Rectangle Grid.Row="1" Height="1" Margin="0,0,0,15" Fill="#F1F5F9" />
+
+                        <StackPanel Grid.Row="2">
+                            <Grid Margin="0,0,0,12">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#64748B" Text="连接状态" />
+                                <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="{Binding SourceTableStatusColor}" Text="{Binding SourceTableStatusText}" />
+                            </Grid>
+                            <Grid Margin="0,15,0,0">
+                                <TextBlock VerticalAlignment="Center" FontSize="14" Foreground="#94A3B8" Text="* 负责扫描 IV 曲线的核心测量单元" TextWrapping="Wrap" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

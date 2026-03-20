@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.DataAccessLayer\StabilityPlatForm.HMProject.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.Models\StabilityPlatForm.HMProject.Models.csproj" />
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.Utility\StabilityPlatForm.HMProject.Utility.csproj" />
+  </ItemGroup>
+
+</Project>

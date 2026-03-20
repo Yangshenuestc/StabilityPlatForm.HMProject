@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Exe_picture.png" />
+    <None Remove="Images\Exe_picture1.png" />
+    <None Remove="Images\HM Lab.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
+    <PackageReference Include="Prism.Core" Version="9.0.537" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.BusinessLogicLayer\StabilityPlatForm.HMProject.BusinessLogicLayer.csproj" />
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.DataAccessLayer\StabilityPlatForm.HMProject.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.Models\StabilityPlatForm.HMProject.Models.csproj" />
+    <ProjectReference Include="..\StabilityPlatForm.HMProject.Utility\StabilityPlatForm.HMProject.Utility.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Exe_picture.png" />
+    <Resource Include="Images\Exe_picture1.png" />
+    <Resource Include="Images\HM Lab.png" />
+  </ItemGroup>
+
+</Project>
